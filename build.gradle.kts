@@ -26,6 +26,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 
+    //security
+    api("org.springframework.boot:spring-boot-starter-security")
     //mapper
     api("org.modelmapper:modelmapper:2.3.8")
     //jpa
