@@ -1,4 +1,4 @@
-package com.cloud.user.jpa
+package com.cloud.user.entity
 
 import javax.persistence.*
 

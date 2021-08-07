@@ -1,8 +1,8 @@
 package com.cloud.user.service
 
 import com.cloud.user.dto.UserDto
-import com.cloud.user.jpa.UserEntity
-import com.cloud.user.jpa.UserRepository
+import com.cloud.user.entity.UserEntity
+import com.cloud.user.entity.UserRepository
 import org.modelmapper.ModelMapper
 import org.modelmapper.convention.MatchingStrategies
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
