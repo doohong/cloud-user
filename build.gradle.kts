@@ -32,6 +32,8 @@ dependencies {
     api("org.modelmapper:modelmapper:2.3.8")
     //jpa
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    //jwt
+    api("io.jsonwebtoken:jjwt:0.9.1")
     // h2
     runtimeOnly ("com.h2database:h2:1.3.176")
 

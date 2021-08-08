@@ -25,7 +25,7 @@ class WebSecurity(
     }
 
     private fun getAuthenticationFilter(): AuthenticationFilter {
-        val authenticationFilter = AuthenticationFilter()
+        val authenticationFilter = AuthenticationFilter(userService, env)
         authenticationFilter.setAuthenticationManager(authenticationManager())
         return authenticationFilter
     }

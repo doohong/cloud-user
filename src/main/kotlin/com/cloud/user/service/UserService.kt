@@ -37,4 +37,13 @@ class UserService(
 
         return User(userEntity.email, userEntity.encryptedPwd, true, true, true, true, listOf())
     }
+
+    fun getUserDetailsByEmail(email: String): UserDto {
+        val userEntity = userRepository.findByEmail(email)
+
+        val mapper = ModelMapper()
+        mapper.configuration.matchingStrategy = MatchingStrategies.STRICT
+
+        return mapper.map(userEntity, UserDto::class.java)
+    }
 }
