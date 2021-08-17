@@ -66,13 +66,14 @@ class UserService(
 //        val orderUrl = String.format(env.getProperty("order_service_url")!!, userId)
 //        val orderResponse = restTemplate.exchange(orderUrl, HttpMethod.GET, null, object : ParameterizedTypeReference<List<ResponseOrder>>(){})
 //        val orders = orderResponse.body ?: listOf()
-        try {
-            val orders = orderServiceClient.getOrders(userId)
-            userDto.orders = orders
-        } catch (e: FeignException) {
-            logger.error(e.message)
-        }
-
+//        try {
+//            val orders = orderServiceClient.getOrders(userId)
+//            userDto.orders = orders
+//        } catch (e: FeignException) {
+//            logger.error(e.message)
+//        }
+        val orders = orderServiceClient.getOrders(userId)
+        userDto.orders = orders
 
         return userDto
     }

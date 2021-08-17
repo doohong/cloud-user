@@ -1,5 +1,6 @@
 package com.cloud.user
 
+import com.cloud.user.error.FeignErrorDecoder
 import feign.Logger
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -20,6 +21,11 @@ class UserApplication {
     @Bean
     fun feignLoggerLevel(): Logger.Level {
         return Logger.Level.FULL
+    }
+
+    @Bean
+    fun getFeignErrorDecoder(): FeignErrorDecoder {
+        return FeignErrorDecoder()
     }
 //    @Bean
 //    @LoadBalanced
