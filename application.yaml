@@ -38,3 +38,8 @@ management:
 #token:
 #  expiration_time: 8640000
 #  secret: user_token
+
+# feign client log
+logging:
+  level:
+    com.cloud.user.client: DEBUG
