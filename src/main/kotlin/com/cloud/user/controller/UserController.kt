@@ -33,6 +33,15 @@ class UserController(
         return greeting.message
     }
 
+    @GetMapping("/users/{userId}")
+    fun getUser(@PathVariable("userId") userId: String): ResponseEntity<ResponseUser> {
+        val userDto = userService.getUserByUserID(userId)
+
+        val responseUser = ModelMapper().map(userDto, ResponseUser::class.java)
+        return ResponseEntity.status(HttpStatus.OK).body(responseUser)
+    }
+
+
     @PostMapping("/users")
     fun createUser(@RequestBody user: RequestUser): ResponseEntity<Any>{
         val mapper = ModelMapper()

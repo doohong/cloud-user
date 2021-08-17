@@ -1,5 +1,6 @@
 package com.cloud.user.dto
 
+import com.cloud.user.vo.ResponseOrder
 import java.time.LocalDate
 import java.util.*
 import javax.validation.constraints.Email
@@ -14,4 +15,5 @@ data class UserDto(
     var createdAt: LocalDate = LocalDate.now(),
 
     var encryptedPwd: String = "",
+    var orders: List<ResponseOrder> = listOf()
 )
