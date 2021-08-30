@@ -30,6 +30,7 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.cloud:spring-cloud-starter-bus-amqp")
+    api("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
     //security
     api("org.springframework.boot:spring-boot-starter-security")
     //mapper
