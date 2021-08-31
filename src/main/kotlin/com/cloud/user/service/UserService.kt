@@ -75,7 +75,9 @@ class UserService(
 //        } catch (e: FeignException) {
 //            logger.error(e.message)
 //        }
+        logger.info("Before call orders microservice")
         val orders = orderServiceClient.getOrders(userId)
+        logger.info("After call orders microservice")
         userDto.orders = orders
 
         return userDto
