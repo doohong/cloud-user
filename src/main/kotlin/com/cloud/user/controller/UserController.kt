@@ -5,6 +5,7 @@ import com.cloud.user.properties.Greeting
 import com.cloud.user.service.UserService
 import com.cloud.user.vo.RequestUser
 import com.cloud.user.vo.ResponseUser
+import io.micrometer.core.annotation.Timed
 import org.modelmapper.ModelMapper
 import org.modelmapper.convention.MatchingStrategies
 import org.springframework.core.env.Environment
@@ -20,6 +21,7 @@ class UserController(
     private val userService: UserService,
 ) {
     @GetMapping("/health_check")
+    @Timed(value="users.status", longTask = true)
     fun status(): String {
 
         return "It's Working in User Service" +
@@ -29,6 +31,7 @@ class UserController(
     }
 
     @GetMapping("/welcome")
+    @Timed(value="users.welcome", longTask = true)
     fun welcome(): String {
         return greeting.message
     }

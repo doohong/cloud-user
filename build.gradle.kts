@@ -32,6 +32,9 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-bus-amqp")
     implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
     implementation("org.springframework.cloud:spring-cloud-starter-zipkin")
+
+    // micrometer
+    implementation("io.micrometer:micrometer-registry-prometheus")
     api("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
     //security
     api("org.springframework.boot:spring-boot-starter-security")
